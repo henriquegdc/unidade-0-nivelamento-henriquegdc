@@ -1,5 +1,6 @@
 public class ItemDePedido {
 
+    // Atributos encapsulados
     private Produto produto;
     private int quantidade;
     private double precoVenda;
@@ -10,13 +11,11 @@ public class ItemDePedido {
      * garantindo que alterações futuras no preço do produto não afetem este pedido.
      */
     public ItemDePedido(Produto produto, int quantidade, double precoVenda) {
-        this.produto = produto;
-        this.quantidade = quantidade;
-        this.precoVenda = precoVenda;
+
     }
 
     public double calcularSubtotal() {
-        return this.quantidade * this.precoVenda;
+        return 0;
     }
 
     /**
@@ -25,18 +24,9 @@ public class ItemDePedido {
      */
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        ItemDePedido outro = (ItemDePedido) obj;
-        return this.produto.equals(outro.getProduto());
+
+        return obj == produto;
     }
 
-    public Produto getProduto() { return produto; }
-    public void setProduto(Produto produto) { this.produto = produto; }
 
-    public int getQuantidade() { return quantidade; }
-    public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
-
-    public double getPrecoVenda() { return precoVenda; }
-    public void setPrecoVenda(double precoVenda) { this.precoVenda = precoVenda; }
 }
